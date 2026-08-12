@@ -1,0 +1,112 @@
+{
+    "config": {
+        "port": "COM3",
+        "baudrate": 115200,
+        "csv": "telemetry.csv"
+    },
+    "commands": {
+        "CXON": "CMD,3195,CX,ON",
+        "CXOFF": "CMD,3195,CX,OFF"
+    },
+    "telemetry": [
+        {
+            "name": "TEAM_ID",
+            "numeric": false,
+            "units": "",
+            "title": "Team ID",
+            "graph": false,
+            "sidebar": true
+            
+        },
+        {
+            "name": "MISSION_TIME",
+            "numeric": true,
+            "units": "s",
+            "title": "Mission Time",
+            "graph": false,
+            "sidebar": true
+        },
+        {
+            "name": "PACKET_COUNT",
+            "numeric": true,
+            "units": "",
+            "title": "Packet Count",
+            "graph": false,
+            "sidebar": true
+        },
+        {
+            "name": "MODE",
+            "numeric": false,
+            "units": "",
+            "title": "Mode",
+            "graph": false,
+            "sidebar": true
+        },
+        {
+            "name": "STATE",
+            "numeric": false,
+            "units": "",
+            "title": "State",
+            "graph": false,
+            "sidebar": true
+        },
+        {
+            "name": "ALTITUDE",
+            "numeric": true,
+            "units": "m",
+            "title": "Altitude",
+            "graph": true,
+            "sidebar": true
+        },
+        {
+            "name": "TEMPERATURE",
+            "numeric": true,
+            "units": "°C",
+            "title": "Temperature",
+            "graph": true,
+            "sidebar": true
+        },
+        {
+            "name": "PRESSURE",
+            "numeric": true,
+            "units": "Pa",
+            "title": "Pressure",
+            "graph": true,
+            "sidebar": true
+        },
+        {
+            "name": "VOLTAGE",
+            "numeric": true,
+            "units": "V",
+            "title": "Voltage",
+            "graph": true,
+            "sidebar": true
+        },
+        {
+            "name": "GPS_ALTITUDE",
+            "numeric": true,
+            "units": "m",
+            "title": "GPS Altitude",
+            "graph": false,
+            "sidebar": true
+        },
+        {
+            "name": "GPS_LATITUDE",
+            "numeric": true,
+            "units": "°",
+            "title": "GPS Latitude",
+            "graph": false,
+            "sidebar": true,
+            "latitude": true
+        },
+        {
+            "name": "GPS_LONGITUDE",
+            "numeric": true,
+            "units": "°",
+            "title": "GPS Longitude",
+            "graph": false,
+            "sidebar": true,
+            "longitude": true
+        }
+    ]
+}
