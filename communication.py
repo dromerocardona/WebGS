@@ -59,7 +59,7 @@ class Communication ():
         
         print("Starting communication...")
         
-        self.server.start()
+        self.server.start() # Use self.server.send(packet) later
 
         # Start running read/send threads
         self.running = True
