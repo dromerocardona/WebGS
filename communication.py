@@ -69,11 +69,33 @@ class Communication ():
         self.sendThread.start()
     
     def read(self):
+        """Read data from the serial port and process it"""
+
         print("Reading from serial port...")
-        while True:
-            pass
+
+        with open(self.csv_file, 'a', newline='') as f:
+            writer = csv.writer(f)
+            while self.running:
+                try:
+                    line = self.serial.readline().decode('utf-8').strip()
+                    if line:
+                        values = line.split(',')
+                        writer.writerow(values)
+
+                        packet = {"telemetry": []}
+                        for i, field in enumerate(self.telemetryDef):
+                            telemetry = field.copy()
+                            telemetry["value"] = values[i]
+                            packet["telemetry"].append(telemetry)
+
+                        self.lastTelemetry = packet
+                        self.server.send(packet)
+                except Exception as e:
+                    logging.error(f"Unexpected error: {e}")
     
     def send(self):
+        """Send commands to serial port"""
+
         print("Ready to send data...")
         while True:
             pass
@@ -93,4 +115,4 @@ class Communication ():
     def flushCSV(self):
         """Flush the csv file"""
         with open(self.csv_file, 'a', newline='') as f:
-            pass
+            f.flush()
