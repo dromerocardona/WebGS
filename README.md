@@ -1,0 +1,12 @@
+### How to run WebGS
+- Download/clone a copy of the WebGS repository
+  - Option 1: Download ZIP file of repo, download and unzip the file
+  - Option 2: Run `git clone https://github.com/dromerocardona/WebGS.git` on your computer
+- Download the newest version of Python (currently 3.14)
+- Go to copy of WebGS and create a Python virtual environment
+  - VSCode: `ctrl + shift + p` + `Python: Create Environment`
+  - Command line: `python -m venv .venv` + `source .venv/bin/activate` (Linux) or `.venv\Scripts\Activate.ps1` (Windows)
+- Install the required libraries
+  - Run `pip install -r requirements.txt`
+- Configure the `config.json` file according to your requirements/system
+- Run `python main.py`
